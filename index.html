@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twincorecuts | 🎬香港影片剪輯、🔧電腦維修、🌐網頁製作</title>
+    <meta name="description" content="Twincorecuts 提供專業影片剪輯、電腦維修及網頁製作服務。香港本地創作，Q版風格，一站式幫你搞掂！">
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        :root {
+        --body-bg: #f9f9f9;
+        --container-bg: white;
+        --card-bg: #fafafa;
+        --hero-bg: linear-gradient(135deg, #fff5ed, #ffe9d6);
+        --about-bg: #fef9f4;
+        --works-cta-bg: #f0f7ff;
+        --contact-bg: #fafafa;
+        --contact-item-bg: white;
+
+        --text-primary: #333;
+        --text-secondary: #555;
+        --text-muted: #666;
+        --text-light: #999;
+        --text-white: white;
+
+        --border-light: #f0f0f0;
+
+        --shadow-light: rgba(0, 0, 0, 0.05);
+        --shadow-medium: rgba(0, 0, 0, 0.06);
+        --shadow-hover: rgba(0, 0, 0, 0.08);
+        --shadow-btn: rgba(255, 154, 86, 0.4);
+
+        --brand-primary: #FF9A56;
+        --brand-hover: #e8863f;
+    }
+    [data-theme="dark"] {
+        --body-bg: #1a1a2e;
+        --container-bg: #16213e;
+        --card-bg: #1a1a2e;
+        --hero-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+        --about-bg: #1a1a2e;
+        --works-cta-bg: #0f3460;
+        --contact-bg: #1a1a2e;
+        --contact-item-bg: #16213e;
+
+        --text-primary: #e0e0e0;
+        --text-secondary: #b0b0b0;
+        --text-muted: #888888;
+        --text-light: #666666;
+
+        --border-light: #2a2a4a;
+
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-medium: rgba(0, 0, 0, 0.4);
+        --shadow-hover: rgba(0, 0, 0, 0.5);
+    }   
+    html
+        {
+        scroll-behavior: smooth;
+        }
+    body
+        {
+        font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+        background-color: var(--body-bg);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 50px; 
+    }
+    .container 
+        {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: var(--container-bg);
+        padding: 30px;
+        border-radius: 30px;
+        box-shadow: 0 4px 20px var(--shadow-light);
+         }
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--border-light);
+        margin-bottom: 30px;
+    }
+
+    header img 
+        {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        }
+
+    header h1 
+        {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text-primary);
+        }
+     nav 
+        {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        background: var(--container-bg);
+        padding: 10px 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px var(--shadow-light);
+        }
+
+    nav a 
+        {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 20px;
+        transition: background 0.3s, color 0.3s;
+        }
+
+    nav a:hover 
+        {
+        background: #FF9A56;
+        color: white;
+        }
+    
+    nav a.active 
+        {
+        background: #FF9A56;
+        color: white;
+        font-weight: 600;
+        }
+    nav a.active:hover 
+        {
+        background: #e8863f;   
+        color: white;
+        }        
+    #hero 
+        {
+        background: var(--hero-bg);
+        padding: 60px 30px;
+        border-radius: 24px;
+        text-align: center;
+        margin-bottom: 40px;
+        }
+
+    #hero h2 
+        {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: var(--text-primary);
+        }
+
+    #hero p 
+        {
+        font-size: 18px;
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        }
+
+    #hero a 
+        {
+        display: inline-block;
+        background: #FF9A56;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+        }
+
+    #hero a:hover 
+        {
+        background: #e8863f;
+        }
+        ol 
+        {
+        list-style: none;
+        padding: 0;
+        }
+
+        ol li 
+        {
+        background: var(--card-bg);
+        padding: 18px 20px;
+        margin-bottom: 12px;
+        border-radius: 16px;
+        border-left: 4px solid #FF9A56;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 8px var(--shadow-light);
+        }
+
+    ol li:hover 
+        {
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px var(--shadow-medium);
+        }
+
+    ol li strong 
+        {
+        font-size: 18px;
+        color: var(--text-primary);
+        }
+
+    ol li p 
+        {
+        margin-top: 6px;
+        color: var(--text-muted);
+        font-size: 15px;
+        }
+    footer 
+        {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 2px solid var(--border-light);
+        color: var(--text-light);
+        font-size: 14px;
+        }
+
+    footer p 
+        {
+        margin: 0;
+        }
+    a 
+        {
+        color: #FF9A56;
+        text-decoration: none;
+        transition: color 0.2s;
+        }
+
+    a:hover 
+        {
+        text-decoration: underline;
+        color: #e8863f;
+        }
+     @media (max-width: 768px) 
+        {
+        header 
+            {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            }
+
+        header h1 
+            {
+            font-size: 20px;
+            }
+
+        nav 
+            {
+            justify-content: center;
+            }
+
+        #hero h2 
+            {
+            font-size: 28px;
+            }
+
+        #hero p 
+            {
+            font-size: 16px;
+            }
+
+        #hero 
+            {
+            padding: 40px 20px;
+        }
+
+        .container 
+            {
+            padding: 20px;
+            }
+        }
+
+    @media (max-width: 480px) 
+        {
+        body 
+            {
+            padding: 10px;
+            }
+
+        header h1 
+            {
+            font-size: 18px;
+            }
+
+        header img 
+            {
+            width: 50px;
+            height: 50px;
+            }
+
+        nav 
+            {
+            gap: 10px;
+            }
+
+        nav a 
+            {
+            font-size: 14px;
+            padding: 4px 10px;
+            }
+
+        #hero h2 
+            {
+            font-size: 22px;
+            }
+
+        #hero p 
+            {
+            font-size: 14px;
+            }
+
+        #hero a 
+            {
+            padding: 10px 20px;
+            font-size: 14px;
+            }
+
+        ol li 
+            {
+            padding: 14px 16px;
+            }
+
+        ol li strong 
+            {
+            font-size: 16px;
+            }
+
+        ol li p 
+            {
+            font-size: 14px;
+            }
+
+        .container 
+            {
+            padding: 15px;
+            border-radius: 20px;
+            }   
+
+        footer 
+            {
+            font-size: 12px;
+            }
+        }
+    #about 
+        {
+        background: var(--about-bg);
+        padding: 30px;
+        border-radius: 24px;
+        border-left: 6px solid #FF9A56;
+        margin-bottom: 40px;
+        }
+
+    #about p:last-of-type 
+        {
+        margin-top: 12px;
+        font-weight: 500;
+        color: #FF9A56;
+        }
+    #works > p 
+        {
+        background: var(--works-cta-bg);
+        padding: 14px 20px;
+        border-radius: 40px;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 500;
+        }
+
+    #works > p a 
+        {
+        font-weight: 700;
+        }
+
+    .work-header 
+        {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 14px;
+        }
+
+    .work-thumb 
+        {
+        width: 140px;
+        height: 79px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 2px 6px var(--shadow-light);
+        }
+
+    .work-info 
+        {
+        flex: 1;
+        }
+
+    .work-info strong 
+        {
+        font-size: 17px;
+        color: var(--text-primary);
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+        }
+
+    .work-meta 
+        {
+        font-size: 13px !important;
+        color: var(--text-muted) !important;
+        margin: 3px 0 !important;
+        line-height: 1.5;
+        }
+
+    @media (max-width: 480px) 
+        {
+        .work-header {
+            flex-direction: column;
+        }
+        .work-thumb {
+            width: 100%;
+            height: auto;
+        }
+        }    
+
+    #pricing 
+        {
+        margin: 40px 0;
+        }
+
+    #pricing h2 
+        {
+        text-align: center;
+        margin-bottom: 10px;
+        }
+
+    .pricing-grid 
+        {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        }
+
+    .pricing-card 
+        {
+        flex: 1 1 250px;
+        max-width: 300px;
+        background: var(--card-bg);
+        padding: 24px 20px 30px;
+        border-radius: 24px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 2px solid transparent;
+        }
+
+    .pricing-card:hover 
+        {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+        border-color: var(--brand-primary);
+        }
+
+    .pricing-card h3 
+        {
+        font-size: 22px;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+        }
+
+    .pricing-card .price 
+        {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--brand-primary);
+        margin-bottom: 16px;
+        }
+
+    .pricing-card .price span 
+        {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-muted);
+        }
+
+    .pricing-card ul 
+        {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+        text-align: left;
+        }
+
+    .pricing-card ul li 
+        {
+        padding: 8px 0;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.5;
+        border-bottom: 1px solid var(--border-light);
+        }
+
+    .pricing-card ul li:last-child 
+        {
+        border-bottom: none;
+        }
+
+ 
+    .pricing-card ul li::first-letter 
+        {
+        font-size: 15px;
+        }
+
+    .pricing-btn 
+        {
+        display: inline-block;
+        background: var(--brand-primary);
+        color: white;
+        padding: 10px 28px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s, transform 0.2s;
+        }
+
+    .pricing-btn:hover 
+        {
+        background: var(--brand-hover);
+        transform: scale(1.03);
+        }
+    #testimonials 
+        {
+        margin: 40px 0;
+        }
+
+    #testimonials h2 
+        {
+        text-align: center;
+        margin-bottom: 10px;
+        }
+
+    .testimonial-grid 
+        {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        }
+
+    .testimonial-card 
+        {
+        flex: 1 1 280px;
+        max-width: 320px;
+        background: var(--card-bg);
+        padding: 24px 22px;
+        border-radius: 24px;
+        box-shadow: 0 4px 12px var(--shadow-light);
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid var(--border-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+    .testimonial-card:hover 
+        {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px var(--shadow-medium);
+        }
+    .author-service 
+        {
+        font-size: 12px;
+        color: var(--brand-primary);
+        margin: 2px 0 0 0;
+        font-weight: 500;
+        }
+
+    .promise-box 
+        {
+        background: var(--about-bg);
+        padding: 24px 28px;
+        border-radius: 20px;
+        margin-top: 30px;
+        border-left: 6px solid var(--brand-primary);
+        }
+
+    .promise-box h3 
+        {
+        font-size: 20px;
+        color: var(--text-primary);
+        margin-bottom: 14px;
+        }
+
+    .promise-box ul 
+        {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        }
+
+    .promise-box ul li 
+        {
+        padding: 6px 0;
+        color: var(--text-secondary);
+        font-size: 15px;
+        line-height: 1.6;
+        }
+
+    .promise-box ul li strong 
+        {
+        color: var(--text-primary);
+        font-weight: 600;
+        }       
+
+    .stars 
+        {
+        font-size: 18px;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+        }
+
+    .testimonial-text 
+        {
+        font-size: 15px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        }
+
+    .testimonial-author 
+        {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border-light);
+        }
+
+    .avatar 
+        {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 18px;
+        flex-shrink: 0;
+        }
+
+    .author-name 
+        {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 15px;
+        margin: 0;
+        }
+
+    .author-role 
+        {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin: 0;
+        }
+
+    @media (max-width: 768px) 
+        {
+        .testimonial-grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial-card {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .pricing-grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        .pricing-card {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+        
+    #contact 
+        {
+        background: var(--contact-bg);
+        padding: 30px;
+        border-radius: 24px;
+        text-align: center;
+        }
+
+    #contact p 
+        {
+        background: var(--contact-item-bg);
+        padding: 12px 18px;
+        border-radius: 16px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px var(--shadow-light);
+        transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+    #contact p:hover 
+        {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px var(--shadow-hover);
+        }
+
+    #contact p:last-child 
+        {
+        margin-bottom: 0;
+        }
+    #contactForm 
+        {
+        max-width: 500px;
+        margin: 20px auto 0;
+        text-align: left;
+        }
+
+    .form-group 
+        {
+        margin-bottom: 16px;
+        }
+
+    .form-group label 
+        {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin-bottom: 4px;
+        }
+
+    .form-group input,
+    .form-group textarea 
+        {
+        width: 100%;
+        padding: 10px 14px;
+        border: 2px solid var(--border-light);
+        border-radius: 12px;
+        font-size: 15px;
+        font-family: inherit;
+        background: var(--contact-item-bg);
+        color: var(--text-primary);
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+        }
+
+    .form-group input:focus,
+    .form-group textarea:focus 
+        {
+        outline: none;
+        border-color: var(--brand-primary);
+        box-shadow: 0 0 0 3px rgba(255, 154, 86, 0.2);
+        }
+    .form-group select 
+        {
+        width: 100%;
+        padding: 10px 14px;
+        border: 2px solid var(--border-light);
+        border-radius: 12px;
+        font-size: 15px;
+        font-family: inherit;
+        background: var(--contact-item-bg);
+        color: var(--text-primary);
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF9A56' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 18px;
+        padding-right: 40px;
+        }
+
+    .form-group select:focus 
+        {
+        outline: none;
+        border-color: var(--brand-primary);
+        box-shadow: 0 0 0 3px rgba(255, 154, 86, 0.2);
+        }
+
+    .form-promise 
+        {
+        text-align: center;
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 14px;
+        margin-bottom: 0;
+        }   
+
+    .submit-btn 
+        {
+        background: var(--brand-primary);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 40px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        width: 100%;
+        }
+
+    .submit-btn:hover 
+        {
+        background: var(--brand-hover);
+        transform: scale(1.02);
+        }    
+    .video-wrapper 
+        {
+        position: relative;
+        padding-bottom: 56.25%; 
+        height: 0;
+        overflow: hidden;
+        border-radius: 12px;
+        margin-top: 10px;
+        }
+
+        .video-wrapper iframe 
+        {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        }     
+    #backToTop 
+        {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #FF9A56;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(255, 154, 86, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, transform 0.3s, background 0.3s;
+        z-index: 999;
+        }
+
+    #backToTop:hover 
+        {
+        background: #e8863f;
+        transform: scale(1.1);
+        }
+
+    #backToTop.show 
+        {
+        opacity: 1;
+        visibility: visible;
+        }
+    .whatsapp-btn 
+    {
+    display: inline-block;
+    background: #25D366; 
+    color: white;
+    padding: 14px 34px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+.whatsapp-btn:hover 
+    {
+    background: #128C7E;
+    transform: scale(1.03);
+    }
+   #faq {
+    margin: 40px 0;
+        }
+.faq-item 
+    {
+    background: var(--card-bg);
+    padding: 18px 24px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    border-left: 4px solid var(--brand-primary);
+    }
+.faq-item h3 
+    {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    }
+.faq-item p 
+    {
+    color: var(--text-secondary);
+    font-size: 15px;
+    }
+    #formSuccess 
+        {
+        animation: fadeIn 0.5s ease;
+        }
+
+    @keyframes fadeIn 
+        {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+        }   
+    </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHJZGV11L2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DHJZGV11L2');
+</script>
+</head>
+<body>
+    <div class="container">
+  <header>
+    <img src="twincorecuts.jpg" alt="品牌標誌" width="100px">
+    <h1>Twincorecuts | 🎬香港影片剪輯、🔧電腦維修、🌐網頁製作</h1>
+  </header>
+
+  <nav>
+    <a href="#about">關於</a>
+    <a href="#services">服務</a>
+    <a href="#pricing">報價</a>
+    <a href="#works">作品</a>
+    <a href="#contact">聯絡</a>
+    <button id="themeToggle" style="
+        background: none;
+        border: 2px solid var(--brand-primary);
+        color: var(--brand-primary);
+        padding: 4px 14px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.3s, color 0.3s;
+    ">🌙 深色</button>
+
+  </nav>
+
+  <main>
+
+        <section id="hero">
+
+        <h2>✂️剪出溫度,修好速度!</h2>
+        <p>影片剪輯 · 電腦維修 · 網頁製作<br>一站式幫你搞掂</p>
+        <a href ="#works">睇下我嘅作品</a>
+
+    </section>
+
+    <section id="about">
+
+        <h2>👋關於Twincorecuts</h2>
+        <p>我係一個鍾意用 Q 版風格講故事嘅創作者。由剪片、砌機維修到寫網頁，我都一手包辦。如果你有 idea，我可以幫你將佢變做現實。</p>
+        <p>📸IG:<a href="https://instagram.com/twincorecuts"target="_blank">@twincorecuts</a></p>
+
+    </section>
+
+    <section id="services">
+ 
+        <h2>服務項目</h2>
+        <ol>
+            <li>
+                🎬影片剪輯
+                <p> 精華剪接、調色、字幕特效，令你嘅影片更有質感</p>
+            </li>
+            <li>
+                🔧電腦維修
+                <p>硬件檢查、系統重裝、散熱清潔，部機即刻翻生</p>
+            </li>
+            <li>
+                🌐網頁製作
+                <p>個人品牌、作品集、簡單網站，幫你喺網絡上建立形象</p>
+            </li>
+        </ol>
+   
+    </section>
+
+        <section id="pricing">
+        <h2>💰 服務報價</h2>
+        <p style="text-align:center; color: var(--text-secondary); margin-bottom: 30px;">
+            以下為參考價格，實際報價會按需求調整，歡迎查詢！
+        </p>
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+                <h3>🎬 影片剪輯</h3>
+                <p class="price">$800 <span>起</span></p>
+                <ul>
+                    <li>✅ 精華剪接（1-3 分鐘）</li>
+                    <li>✅ 調色、字幕、轉場</li>
+                    <li>✅ 1 次免費修改</li>
+                    <li>⏱️ 3-5 個工作天</li>
+                    <li>📁 客戶提供素材</li>
+                    <li>➕ 加長 / 特效另議</li>
+                </ul>
+                <a href="#contact" class="pricing-btn">查詢報價</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>🔧 電腦維修</h3>
+                <p class="price">$300 <span>起</span></p>
+                <ul>
+                    <li>✅ 基本檢查費（可扣維修費）</li>
+                    <li>✅ 硬件檢查、系統重裝</li>
+                    <li>✅ 散熱清潔、病毒清除</li>
+                    <li>⏱️ 1-3 個工作天</li>
+                    <li>💰 維修前先報價</li>
+                    <li>🔒 維修前確認資料備份</li>
+                </ul>
+                <a href="#contact" class="pricing-btn">查詢報價</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>🌐 網頁製作</h3>
+                <p class="price">$2,000 <span>起</span></p>
+                <ul>
+                    <li>✅ 一頁式網站 / 作品集</li>
+                    <li>✅ 手機響應式設計</li>
+                    <li>✅ 基本 SEO 設定</li>
+                    <li>✅ 2 次免費修改</li>
+                    <li>⏱️ 5-7 個工作天</li>
+                    <li>📁 客戶提供 Logo 及文案</li>
+                </ul>
+                <a href="#contact" class="pricing-btn">查詢報價</a>
+            </div>
+
+        </div>
+    </section>
+    <div style="text-align: center; margin: 30px 0;">
+    <a href="https://wa.me/85293829421?text=你好！我喺你個網站見到你嘅服務，想查詢一下報價。" target="_blank" class="whatsapp-btn">💬 WhatsApp 查詢</a>
+    </div>
+    <section id="faq">
+    <h2>❓ 常見問題</h2>
+    <div class="faq-item">
+        <h3>剪片一般要幾耐？</h3>
+        <p>視乎影片長度同複雜程度，一般 1-3 分鐘嘅精華片大約需要 3-5 個工作天。</p>
+    </div>
+    <div class="faq-item">
+        <h3>電腦維修會唔會冇晒啲資料？</h3>
+        <p>我會喺維修前同你確認資料備份，確保你嘅檔案安全。</p>
+    </div>
+    <div class="faq-item">
+        <h3>網頁製作包唔包 hosting？</h3>
+        <p>基本計劃唔包 hosting，但可以幫你推薦穩定嘅 hosting 服務。</p>
+    </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>⭐ 合作回饋</h2>
+        <p style="text-align:center; color: var(--text-secondary); margin-bottom: 30px;">
+            以下係一啲合作夥伴嘅回饋，多謝你哋嘅信任！
+        </p>
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">「由原本嘅長片整理成短片後，觀眾留存率明顯好咗。溝通好順暢，改片都好快手。」</p>
+                <div class="testimonial-author">
+                    <div class="avatar">👨‍💻</div>
+                    <div>
+                        <p class="author-name">Alex</p>
+                        <p class="author-role">YouTube 創作者</p>
+                        <p class="author-service">🎬 影片剪輯 · 2026 年 8 月</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">「部電腦壞咗好耐，整完之後快咗好多。價錢合理，而且維修前會先報價，唔怕俾人劏。」</p>
+                <div class="testimonial-author">
+                    <div class="avatar">👩‍🎨</div>
+                    <div>
+                        <p class="author-name">Karen</p>
+                        <p class="author-role">設計師</p>
+                        <p class="author-service">🔧 電腦維修 · 2026 年 7 月</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">「我個網頁由零開始都係佢幫我搞，簡單、靚、又快。推薦俾想創業嘅朋友！」</p>
+                <div class="testimonial-author">
+                    <div class="avatar">🧑‍🍳</div>
+                    <div>
+                        <p class="author-name">Sam</p>
+                        <p class="author-role">小店店主</p>
+                        <p class="author-service">🌐 網頁製作 · 2026 年 6 月</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="promise-box">
+            <h3>🤝 我嘅服務承諾</h3>
+            <ul>
+                <li>✅ 收到查詢後，<strong>1 個工作天內回覆</strong></li>
+                <li>✅ 報價清晰，<strong>唔會隱藏收費</strong></li>
+                <li>✅ 維修前先確認<strong>資料備份</strong></li>
+                <li>✅ 唔滿意可以<strong>免費修改一次</strong></li>
+            </ul>
+        </div>
+    </section>
+    <section id="works">
+        <h2>🎥 精選作品</h2>
+        <ol>
+                <li>
+                    <div class="work-header">
+                        <img src="https://img.youtube.com/vi/J0GppmYzTlM/mqdefault.jpg" alt="作品縮圖" class="work-thumb">
+                        <div class="work-info">
+                            <strong>🎬 短片精華剪輯</strong>
+                            <p class="work-meta">類型：概念作品｜節奏剪輯</p>
+                            <p class="work-meta">負責：剪接、音效設計、節奏編排</p>
+                            <p class="work-meta">成果：將零散素材整合成 3 分鐘完整影片</p>
+                        </div>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/J0GppmYzTlM?si=rFeFajeE4lbCHAKK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="work-header">
+                        <img src="https://img.youtube.com/vi/6rVNuVQJ8SY/mqdefault.jpg" alt="作品縮圖" class="work-thumb">
+                        <div class="work-info">
+                            <strong>🎬 概念短片剪輯</strong>
+                            <p class="work-meta">類型：個人概念作品｜視覺敘事</p>
+                            <p class="work-meta">負責：剪接、調色、轉場設計</p>
+                            <p class="work-meta">目標：探索節奏感與視覺連貫性</p>
+                        </div>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/6rVNuVQJ8SY?si=c-wnlEHdTGRuF70J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="work-header">
+                        <img src="https://img.youtube.com/vi/X7GWdXdSJ58/mqdefault.jpg" alt="作品縮圖" class="work-thumb">
+                        <div class="work-info">
+                            <strong>🎬 創意剪輯實驗</strong>
+                            <p class="work-meta">類型：個人概念作品｜節奏及音效實驗</p>
+                            <p class="work-meta">負責：剪接、字幕特效、音效配合</p>
+                            <p class="work-meta">目標：嘗試不同剪輯風格與節奏變化</p>
+                        </div>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/X7GWdXdSJ58?si=KPJ07THALMwzFNqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </li>
+
+            </ol>
+            <p>👉 更多作品喺 <a href="https://instagram.com/twincorecuts" target="_blank">@twincorecuts</a></p>
+    </section>
+
+    <section id="contact">
+        <h2>📩 立即查詢</h2>
+        <p>有嘢想搞？直接填下面張 form，或者 DM 我 IG / Email 都得！</p>
+
+
+        <form id="contactForm" action="https://formspree.io/f/mvkovavr" method="POST">
+
+            <div class="form-group">
+                <label for="name">你嘅名字 *</label>
+                <input type="text" id="name" name="name" placeholder="例如：陳小明" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">你嘅 Email *</label>
+                <input type="email" id="email" name="email" placeholder="例如：ming@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">想查詢嘅服務 *</label>
+                <select id="service" name="service" required>
+                    <option value="">請選擇...</option>
+                    <option value="video">🎬 影片剪輯</option>
+                    <option value="repair">🔧 電腦維修</option>
+                    <option value="web">🌐 網頁製作</option>
+                    <option value="other">其他 / 想傾傾</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">預算範圍（可選）</label>
+                <select id="budget" name="budget">
+                    <option value="">請選擇...</option>
+                    <option value="under-1000">$1,000 以下</option>
+                    <option value="1000-3000">$1,000 - $3,000</option>
+                    <option value="3000-5000">$3,000 - $5,000</option>
+                    <option value="above-5000">$5,000 以上</option>
+                    <option value="not-sure">未確定</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">需求簡介 *</label>
+                <textarea id="message" name="message" rows="4" placeholder="例如：我想將一條 30 分鐘嘅直播剪成 3 分鐘精華片..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">📤 傳送訊息</button>
+
+            <p class="form-promise">⏱️ 收到查詢後，我會喺 1 個工作天內回覆。</p>
+
+            <div id="formSuccess" style="display: none; text-align: center; padding: 20px; background: #e8f5e9; border-radius: 16px; margin-top: 16px;">
+                <p style="font-size: 18px; font-weight: 600; color: #2e7d32; margin: 0;">✅ 已成功收到你嘅查詢！</p>
+                <p style="font-size: 14px; color: #555; margin-top: 8px;">我會喺 1 個工作天內回覆你。</p>
+            </div>
+        
+        </form>
+
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--border-light);">
+        <p>📸 IG: <a href="https://instagram.com/twincorecuts" target="_blank">@twincorecuts</a></p>
+        <p>📧 Email: <a href="mailto:twincorecuts@gmail.com">twincorecuts@gmail.com</a></p>
+    </div>
+</section>
+
+  </main>
+    <footer>
+    <p>© 2026 Twincorecuts · 用 ❤️ 整嘅網站</p>
+    <p style="margin-top: 8px; font-size: 12px;">
+        📸 <a href="https://instagram.com/twincorecuts" target="_blank">IG</a> · 
+        📧 <a href="mailto:twincorecuts@gmail.com">Email</a> · 
+        💬 <a href="https://wa.me/85293829421" target="_blank">WhatsApp</a>
+    </p>
+    </footer>
+
+ </div>
+ <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" id="backToTop" title="回到頂部">↑</button>   
+<script>
+    window.addEventListener('scroll', function() 
+        {
+        var btn = document.getElementById('backToTop');
+        if (window.scrollY > 300) 
+            {
+            btn.classList.add('show');
+            } 
+            else 
+            {
+            btn.classList.remove('show');
+            }
+            });
+</script>
+<script>
+    window.addEventListener('scroll', function() 
+        {
+        var sections = document.querySelectorAll('section:not(#hero):not(#faq):not(#testimonials)');
+        var navLinks = document.querySelectorAll('nav a');
+
+        var current = '';
+        var scrollY = window.scrollY;
+        var windowHeight = window.innerHeight;
+        var documentHeight = document.documentElement.scrollHeight;
+
+        if (scrollY + windowHeight >= documentHeight - 5) {
+            current = 'contact';
+        } 
+        else 
+            {
+            sections.forEach(function(section) {
+                var rect = section.getBoundingClientRect();
+                if (rect.top <= 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+             }
+
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+            });
+        });
+</script>
+<script>
+    var toggleBtn = document.getElementById('themeToggle');
+    var currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleBtn.textContent = '☀️ 淺色';
+    }
+
+    toggleBtn.addEventListener('click', function() {
+        var theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙 深色';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '☀️ 淺色';
+        }
+    });
+</script>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();  
+        var form = e.target;
+        var formData = new FormData(form);
+        var successMsg = document.getElementById('formSuccess');
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(function(response) {
+            if (response.ok) {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+            } else {
+                alert('傳送失敗，請稍後再試或直接 WhatsApp 我。');
+            }
+        }).catch(function() {
+            alert('網絡錯誤，請稍後再試或直接 WhatsApp 我。');
+        });
+    });
+</script>
+</body>
+</html>
